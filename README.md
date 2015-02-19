@@ -11,3 +11,7 @@ List of files that contain dummy values:
 - package.json:24 - whole line needs to be replaced with your author information
 - package.json:27 - [BUGS URL] needs to be replaced with the link to your github issues page (i.e. "https://github.com/benmanbs/javascript-skeleton/issues")
 - package.json:29 - [HOME PAGE] needs to be replaced with the link to the github home page (i.e. "https://github.com/benmanbs/javascript-skeleton")
+
+## Publisher
+
+If you run ./publish.sh and pass in a version type (major, minor, or patch) it will roll the version number that you specified and publish to NPM and bower. 
