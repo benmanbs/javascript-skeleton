@@ -2,12 +2,14 @@
 
 var gulp = require('gulp');
 var webpack = require('gulp-webpack');
-var rename = require('gulp-rename');
 
 gulp.task('dist', ['bower'], function () {
   return gulp.src('src/[ENTRY POINT]')
     .pipe(webpack({
-      output: { libraryTarget: 'umd' },
+      output: { 
+        filename: '[OUTPUT FILE NAME]',
+        libraryTarget: 'umd'
+      },
       externals:  {
         backbone: {
           amd: 'backbone',
@@ -21,8 +23,8 @@ gulp.task('dist', ['bower'], function () {
           commonjs2: 'underscore',
           root: '_'
         }
-      }
+      },
+      devtool: 'source-map'`
     }))
-    .pipe(rename('[OUTPUT FILE NAME]'))
     .pipe(gulp.dest('dist'));
 });
